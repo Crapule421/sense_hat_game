@@ -1,9 +1,14 @@
-#Initialisation du SenseHat
+
 from sense_hat import SenseHat
 sense = SenseHat()
-
-#Si le SenseHat est bien initialisé alors je récupère les informations
-#du joystick et les print en console.
-while True:
-    for event in sense.stick.get_events():
-        print(event.direction, event.action)
+import time
+sense.clear(0,0,0)
+x=0
+y=6
+sense.set_pixel(x,y,66, 134, 244)
+while x<7:
+    sense.clear(0,0,0)
+    sense.set_pixel(x,y,66,134,244)
+    time.sleep(0.5)
+    x = x+1
+    y = y-1
